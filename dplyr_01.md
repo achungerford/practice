@@ -1,0 +1,69 @@
+Data Manipulation in R with dplyr
+================
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+#### Set up R environment
+
+Install tidyverse and hflights package. "hflights" is described on CRAN as "A data only package containing commercial domestic flights that departed Houston (IAH and HOU) in 2011."
+
+``` r
+# install.packages("hflights")  # data
+
+
+# load packages
+library("rmarkdown")
+library("dplyr")
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
+library("hflights")             # data
+```
+
+#### Get acquainted with the hflights dataset.
+
+``` r
+str(hflights)
+```
+
+    ## 'data.frame':    227496 obs. of  21 variables:
+    ##  $ Year             : int  2011 2011 2011 2011 2011 2011 2011 2011 2011 2011 ...
+    ##  $ Month            : int  1 1 1 1 1 1 1 1 1 1 ...
+    ##  $ DayofMonth       : int  1 2 3 4 5 6 7 8 9 10 ...
+    ##  $ DayOfWeek        : int  6 7 1 2 3 4 5 6 7 1 ...
+    ##  $ DepTime          : int  1400 1401 1352 1403 1405 1359 1359 1355 1443 1443 ...
+    ##  $ ArrTime          : int  1500 1501 1502 1513 1507 1503 1509 1454 1554 1553 ...
+    ##  $ UniqueCarrier    : chr  "AA" "AA" "AA" "AA" ...
+    ##  $ FlightNum        : int  428 428 428 428 428 428 428 428 428 428 ...
+    ##  $ TailNum          : chr  "N576AA" "N557AA" "N541AA" "N403AA" ...
+    ##  $ ActualElapsedTime: int  60 60 70 70 62 64 70 59 71 70 ...
+    ##  $ AirTime          : int  40 45 48 39 44 45 43 40 41 45 ...
+    ##  $ ArrDelay         : int  -10 -9 -8 3 -3 -7 -1 -16 44 43 ...
+    ##  $ DepDelay         : int  0 1 -8 3 5 -1 -1 -5 43 43 ...
+    ##  $ Origin           : chr  "IAH" "IAH" "IAH" "IAH" ...
+    ##  $ Dest             : chr  "DFW" "DFW" "DFW" "DFW" ...
+    ##  $ Distance         : int  224 224 224 224 224 224 224 224 224 224 ...
+    ##  $ TaxiIn           : int  7 6 5 9 9 6 12 7 8 6 ...
+    ##  $ TaxiOut          : int  13 9 17 22 9 13 15 12 22 19 ...
+    ##  $ Cancelled        : int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CancellationCode : chr  "" "" "" "" ...
+    ##  $ Diverted         : int  0 0 0 0 0 0 0 0 0 0 ...
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
