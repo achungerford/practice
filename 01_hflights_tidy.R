@@ -88,3 +88,24 @@ glimpse(hflights_tbl)
 # from hflights package, call data hflights, and assign back to hflights
 hflights <- hflights::hflights
 str(hflights)
+
+
+
+
+# Section 2: Select & Mutate ----------------------------------------------
+
+# select() will remove rows, returning only the ones we've chosen
+    # contains("x")
+    # matches("x")
+    # ends_with("xyz")
+    # starts_with("abc")
+
+
+
+# NOTES -------------------------------------------------------------------
+# 
+# select(), which returns a subset of the columns,
+# filter(), that is able to return a subset of the rows,
+# arrange(), that reorders the rows according to single or multiple variables,
+# mutate(), used to add columns from existing data,
+# summarize(), which reduces each group to a single row by calculating aggregate measures.
